@@ -1,0 +1,94 @@
+<style>
+  main{
+    color: #777;
+    font-size: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+  }
+  article.sec01_article{
+    width: 45%;
+    text-align: center;
+  }
+  article.sec01_article h2{
+    font-size: 2.0em;
+    width: 100%;
+  }
+  article.sec01_article img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 15px auto;
+  }
+  article.sec01_article p{
+    padding: 5px 10px;
+    text-align: justify;
+  }
+  article.sec01_article button{
+    background: #495976;
+    padding: 10px 15px;
+    border: 0;
+    color: #fff;
+  }
+  article.sec01_article button:hover{
+    background: #f8f100;
+  }
+</style>
+<body>
+  <main>
+    <section>
+      <article class="sec01_article">
+        <h2>Heading</h2>
+        <img src="{{ section.settings.articleimg |img_url:'master'}}">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+        <button>Click Here</button>
+      </article>
+      <article class="sec01_article">
+        <h2>Heading</h2>
+        <img src="{{ section.settings.articleimg2 |img_url:"master" }}">
+        <p>{{ section.settings.article2_text }}</p>
+        <button>Click Here</button>
+      </article>
+    </section>
+  </main>
+</body>
+{% schema %}
+  {
+    "name": "section01",
+    "settings": [
+      {
+        "type":"image_picker",
+        "id":"articleimg",
+        "label": "Pick your image"
+      },
+      {
+        "type":"image_picker",
+        "id":"articleimg2",
+        "label": "Pick your image"
+      },
+      {
+        "type":"text",
+        "id":"article2_text",
+        "label": "Write here"
+      }
+    ],
+    "presets" : [
+    {
+      "name" : "section01"
+    }
+]
+  }
+  
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

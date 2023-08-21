@@ -1,0 +1,56 @@
+<style>
+		.wrapper{
+			width: 100%;
+			margin: 0 auto;
+			padding: 20px 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.block-box{
+			width: 20%;
+			margin: 0;
+			padding: 0;
+		}
+		.block-box img{
+			width: 100%;
+		}
+  </style>
+<section class="wrapper" >
+   {% for block in section.blocks %}
+      <div class="block-box">
+          <img src="{{block.settings.slide1 |img_url:'master'}}">
+      </div>
+  {% endfor %}
+</section>
+{% schema %}
+  {
+      "name": "block-sec",
+       "settings": [],
+       "blocks": [
+     {
+       "name": "slide",
+       "type": "slide",
+       "settings": [
+           {
+           "type": "image_picker",
+           "id": "slide1",
+           "label": "Slide"
+         }
+       ]
+      }
+    ],
+    "presets" : [
+    {
+      "name" : "block-sec"
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

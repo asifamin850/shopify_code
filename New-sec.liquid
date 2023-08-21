@@ -1,0 +1,69 @@
+ <style>
+         .section-wrapper{
+           display: flex;
+           justify-content: space-around;
+           align-items: center;
+           width: 100%;
+         }
+		.box{
+			width: 20%;
+			margin: 0;
+			padding: 0;
+		}
+		.box img{
+			width: 100%;
+		}
+  </style>
+<section class="section-wrapper">
+    <div class="box">
+        <img src="{{section.settings.img1 |img_url:'master'}}">
+    </div>
+    <div class="box">
+        <img src="{{section.settings.img2 |img_url:'master'}}">
+    </div>
+    <div class="box">
+        <img src="{{section.settings.img3 |img_url:'master'}}">
+    </div>
+    <div class="box">
+         <img src="{{section.settings.img4 |img_url:'master'}}">
+    </div>
+</section>
+{% schema %}
+  {
+    "name": "New-sec",
+    "settings": [
+      {
+           "type": "image_picker",
+           "id": "img1",
+           "label": "Pick your image"
+         },
+      {
+           "type": "image_picker",
+           "id": "img2",
+           "label": "Pick your image"
+         },
+      {
+           "type": "image_picker",
+           "id": "img3",
+           "label": "Pick your image"
+         },
+      {
+           "type": "image_picker",
+           "id": "img4",
+           "label": "Pick your image"
+         }
+    ],
+    "presets" : [
+    {
+      "name" : "New-sec"
+    }
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+ 
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
